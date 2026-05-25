@@ -1,4 +1,5 @@
-# 🌊 AquaNime
+<<<<<<< HEAD
+# 🌊 AquaNime-V2
 
 AquaNime adalah platform streaming anime modern yang dibangun dengan **Next.js 14+** dan **Tailwind CSS**. Project ini merupakan migrasi dari versi HTML statis ke aplikasi web yang dinamis dan teroptimasi.
 
@@ -25,3 +26,6 @@ Project ini menggunakan struktur folder **Feature-Based**:
 - [ ] Integrasi desain dari `aquanime-pages`
 - [ ] Implementasi API Anime
 - [ ] Optimasi SEO & Performance
+=======
+# Aquanime-V2
+>>>>>>> eb740ebc2ccd3bfe491143601ebb883869b6d2a8
