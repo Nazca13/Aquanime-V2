@@ -1,0 +1,13 @@
+backend/node_modules
+node_modules*
+experimental
+experimental*
+experimental/
+experimental/astro/*
+experimental/astro
+experimental/**
+experimental/*
+experimental/*/*
+backup
+backup/*
+.env
