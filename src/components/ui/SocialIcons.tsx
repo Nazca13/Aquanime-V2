@@ -7,27 +7,69 @@ const socialLinks = [
 ]
 
 interface SocialIconsProps {
+  /** 'ghost' = white outline only (navbar), 'filled' = blue bg box (footer) */
+  variant?: 'ghost' | 'filled'
   size?: 'sm' | 'md' | 'lg'
   className?: string
 }
 
-export function SocialIcons({ size = 'md', className = '' }: SocialIconsProps) {
-  const sizeClasses = {
-    sm: 'text-lg',
-    md: 'text-xl',
-    lg: 'text-3xl',
+export function SocialIcons({ variant = 'ghost', size = 'md', className = '' }: SocialIconsProps) {
+  const sizeMap = {
+    sm: 'text-[11px]',
+    md: 'text-[13px]',
+    lg: 'text-[15px]',
+  }
+
+  const gapMap = {
+    sm: 'gap-2.5',
+    md: 'gap-3',
+    lg: 'gap-3.5',
+  }
+
+  if (variant === 'ghost') {
+    return (
+      <div className={`flex items-center ${gapMap[size]} ${className}`}>
+        {socialLinks.map((s) => (
+          <a
+            key={s.label}
+            href={s.href}
+            aria-label={s.label}
+            className={`
+              text-white/70 hover:text-white
+              transition-all duration-200
+              ${sizeMap[size]}
+            `}
+          >
+            <i className={s.icon} />
+          </a>
+        ))}
+      </div>
+    )
+  }
+
+  // variant === 'filled'
+  const filledSizeMap = {
+    sm: 'w-7 h-7 text-[10px]',
+    md: 'w-8 h-8 text-[11px]',
+    lg: 'w-9 h-9 text-[12px]',
   }
 
   return (
-    <div className={`flex items-center space-x-4 ${className}`}>
-      {socialLinks.map((social) => (
+    <div className={`flex items-center gap-1.5 ${className}`}>
+      {socialLinks.map((s) => (
         <a
-          key={social.label}
-          href={social.href}
-          aria-label={social.label}
-          className={`text-white hover:text-accent-yellow transition-all duration-300 hover:-translate-y-1 ${sizeClasses[size]}`}
+          key={s.label}
+          href={s.href}
+          aria-label={s.label}
+          className={`
+            flex items-center justify-center rounded
+            bg-primary-light text-white
+            hover:bg-accent-primary hover:-translate-y-0.5
+            transition-all duration-200
+            ${filledSizeMap[size]}
+          `}
         >
-          <i className={social.icon}></i>
+          <i className={s.icon} />
         </a>
       ))}
     </div>

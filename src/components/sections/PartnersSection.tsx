@@ -1,53 +1,68 @@
-import Image from 'next/image'
-import Link from 'next/link'
+'use client'
 
-const partners = [
-  { name: 'ATX', logo: '/images/atx_logo.png' },
-  { name: 'Karaoke Manekineko', logo: '/images/manekineko_logo.png' },
-  { name: 'RRI Jakarta 105.0 FM', logo: '/images/rri_logo.png' },
-  { name: 'Suara.com', logo: '/images/suara_com_logo.png' },
-  { name: 'Yoursay.id', logo: '/images/yoursay_id_logo.png' },
-  { name: 'Oronamin C', logo: '/images/oronamin_c_logo.png' },
-  { name: 'Bstation', logo: '/images/bstation_logo.png' },
-  { name: 'AOK', logo: '/images/aok_logo.png' },
-  { name: 'Jagat', logo: '/images/jagat_logo.png' },
+import Image from 'next/image'
+
+const DILIPUT = [
+  { name: 'Suara.com',   logo: '/images/Kolaborator-Logo/suara_com_logo.png' },
+  { name: 'RRI',         logo: '/images/Kolaborator-Logo/rri_logo.png' },
+  { name: 'Yoursay.id',  logo: '/images/Kolaborator-Logo/yoursay_id_logo.png' },
+]
+
+const KOLABORATOR = [
+  { name: 'ATX',         logo: '/images/Kolaborator-Logo/atx_logo.png' },
+  { name: 'Manekineko',  logo: '/images/Kolaborator-Logo/manekineko_logo.png' },
+  { name: 'Jagat',       logo: '/images/Kolaborator-Logo/jagat_logo.png' },
+  { name: 'Bstation',    logo: '/images/Kolaborator-Logo/bstation_logo.png' },
 ]
 
 export function PartnersSection() {
   return (
-    <section className="min-h-screen flex items-center justify-center relative bg-homepage-light dark:bg-homepage-dark bg-cover bg-center bg-fixed">
-      <div className="absolute inset-0 bg-black/10"></div>
-      <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 animate-fade-in">
-          MEDIA & PARTNER<br />
-          YANG SUDAH BERKOLABORASI DENGAN AQUANIME
-        </h2>
-        
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mb-12">
-          {partners.map((partner) => (
-            <div
-              key={partner.name}
-              className="bg-white/95 dark:bg-gray-800/95 p-4 rounded-lg shadow-lg hover:transform hover:scale-105 transition-all duration-300 flex items-center justify-center h-20"
-            >
-              <Image
-                src={partner.logo}
-                alt={`${partner.name} Logo`}
-                width={100}
-                height={60}
-                className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-              />
-            </div>
-          ))}
+    <section id="partners" className="relative w-full bg-primary-base py-16 sm:py-20 lg:py-24 overflow-hidden">
+      {/* Grid pattern */}
+      <div className="absolute inset-0 grid-bg opacity-15" />
+
+      {/* Effect-Home-03 kiri */}
+      <div className="absolute top-1/2 -translate-y-1/2 left-0 w-[200px] sm:w-[280px] aspect-square z-0 pointer-events-none">
+        <Image src="/images/Effect-Home-03.png" alt="" fill className="object-contain object-left opacity-45" />
+      </div>
+
+      <div className="relative z-10 max-w-[1320px] mx-auto px-5 lg:px-8">
+
+        {/* Powered by */}
+        <div className="text-center">
+          <span className="text-primary-light text-[10px] font-bold tracking-[0.25em] uppercase">POWERED BY</span>
+          <div className="mt-3 inline-flex bg-primary-base/60 border border-white/10 rounded-full px-8 py-2.5">
+            <Image src="/images/Kolaborator-Logo/Animae-Logo.png" alt="Animae" width={130} height={36} className="h-7 sm:h-9 w-auto" />
+          </div>
         </div>
 
-        <div className="text-center">
-          <p className="text-white text-lg mb-6">Mau jadi partner kami juga?</p>
-          <Link
-            href="/kontak"
-            className="inline-block bg-white/20 text-white border-2 border-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-primary-blue transition-all duration-300"
-          >
-            HUBUNGI SEKARANG
-          </Link>
+        {/* Heading */}
+        <h2 className="mt-7 text-center text-white font-extrabold text-[26px] sm:text-[32px] md:text-[38px] tracking-tight">
+          JARINGAN EKOSISTEM & PUBLIKASI
+        </h2>
+
+        {/* Diliput oleh */}
+        <div className="mt-10 sm:mt-14">
+          <p className="text-center text-white/40 text-[10px] font-semibold tracking-[0.2em] uppercase mb-6">Diliput oleh</p>
+          <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-14">
+            {DILIPUT.map((p) => (
+              <div key={p.name} className="group relative w-[90px] sm:w-[110px] h-[36px] sm:h-[44px]">
+                <Image src={p.logo} alt={p.name} fill className="object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Kolaborator Strategis */}
+        <div className="mt-10 sm:mt-14">
+          <p className="text-center text-white/40 text-[10px] font-semibold tracking-[0.2em] uppercase mb-6">Kolaborator Strategis</p>
+          <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-14">
+            {KOLABORATOR.map((p) => (
+              <div key={p.name} className="group relative w-[75px] sm:w-[95px] h-[32px] sm:h-[40px]">
+                <Image src={p.logo} alt={p.name} fill className="object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

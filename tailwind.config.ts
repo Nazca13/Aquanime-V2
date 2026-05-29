@@ -11,25 +11,37 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          blue: '#0F50A6',
-          light1: '#3B8DBF',
-          light2: '#73C6D9',
-          light3: '#C1D9F3',
+          base: '#0F3E61',
+          light: '#00A8E8',
         },
         accent: {
-          yellow: '#F2CB57',
+          primary: '#FF5E00',
+          secondary: '#FFAC00',
         },
-        dark: {
-          grey: '#0D0D0D',
+        surface: {
+          bg: '#F4F7F9',
+          panel: '#FFFFFF',
+          border: '#E2E8F0',
+        },
+        text: {
+          primary: '#0F172A',
+          secondary: '#475569',
         },
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
-        futura: ['Futura Std', 'sans-serif'],
       },
       backgroundImage: {
-        'homepage-light': "url('/images/homepage_bg_full.jpg')",
-        'homepage-dark': "url('/images/dark_mode_bg_full.jpg')",
+        'hero-main': "url('/images/AquaNime-Bg.png')",
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(6px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.3s ease-out',
       },
     },
   },

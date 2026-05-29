@@ -30,12 +30,9 @@ export function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     if (!formData.name || !formData.email || !formData.message) {
-      setStatus({
-        type: 'error',
-        message: 'Harap isi semua kolom yang wajib!'
-      })
+      setStatus({ type: 'error', message: 'Harap isi semua kolom yang wajib!' })
       return
     }
 
@@ -43,107 +40,62 @@ export function ContactForm() {
     setStatus({ type: 'info', message: 'Mengirim...' })
 
     try {
-      // Initialize EmailJS (replace with your actual public key)
       emailjs.init("2tQt_0ldRIoW6V-KK")
-      
-      await emailjs.send(
-        "service_gc1bb7h", // Replace with your service ID
-        "template_iqjyj4r", // Replace with your template ID
-        {
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject || 'Tanpa Subjek',
-          message: formData.message,
-        }
-      )
-
-      setStatus({
-        type: 'success',
-        message: 'Email berhasil terkirim! Terima kasih atas pesan Anda.'
+      await emailjs.send("service_gc1bb7h", "template_iqjyj4r", {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject || 'Tanpa Subjek',
+        message: formData.message,
       })
+
+      setStatus({ type: 'success', message: 'Email berhasil terkirim! Terima kasih atas pesan Anda.' })
       setFormData({ name: '', email: '', subject: '', message: '' })
     } catch (error) {
-      setStatus({
-        type: 'error',
-        message: 'Gagal mengirim email. Silakan coba lagi.'
-      })
+      setStatus({ type: 'error', message: 'Gagal mengirim email. Silakan coba lagi.' })
       console.error('EmailJS error:', error)
     } finally {
       setIsSubmitting(false)
     }
   }
 
+  const inputClass = 'w-full px-4 py-3 border border-surface-border rounded-xl focus:ring-2 focus:ring-primary-light focus:border-transparent bg-white text-text-primary text-[14px] transition-all'
+
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-5">
       <div>
-        <label htmlFor="name" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+        <label htmlFor="name" className="block text-[13px] font-semibold text-text-primary mb-1.5">
           Nama Lengkap *
         </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-        />
+        <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className={inputClass} />
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+        <label htmlFor="email" className="block text-[13px] font-semibold text-text-primary mb-1.5">
           Email Anda *
         </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-        />
+        <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required className={inputClass} />
       </div>
 
       <div>
-        <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+        <label htmlFor="subject" className="block text-[13px] font-semibold text-text-primary mb-1.5">
           Subjek
         </label>
-        <input
-          type="text"
-          id="subject"
-          name="subject"
-          value={formData.subject}
-          onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-        />
+        <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange} className={inputClass} />
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+        <label htmlFor="message" className="block text-[13px] font-semibold text-text-primary mb-1.5">
           Pesan Anda *
         </label>
-        <textarea
-          id="message"
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-          rows={5}
-          className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-vertical"
-        />
+        <textarea id="message" name="message" value={formData.message} onChange={handleChange} required rows={5} className={`${inputClass} resize-vertical`} />
       </div>
 
       {status.message && (
-        <div
-          className={`p-4 rounded-lg ${
-            status.type === 'success'
-              ? 'bg-green-100 text-green-700 border border-green-300'
-              : status.type === 'error'
-              ? 'bg-red-100 text-red-700 border border-red-300'
-              : 'bg-blue-100 text-blue-700 border border-blue-300'
-          }`}
-        >
+        <div className={`p-3 rounded-xl text-[13px] ${
+          status.type === 'success' ? 'bg-green-50 text-green-700 border border-green-200'
+          : status.type === 'error' ? 'bg-red-50 text-red-700 border border-red-200'
+          : 'bg-blue-50 text-blue-700 border border-blue-200'
+        }`}>
           {status.message}
         </div>
       )}
@@ -151,7 +103,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-primary-blue text-white py-3 px-6 rounded-lg font-semibold hover:bg-primary-light1 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300"
+        className="w-full bg-primary-light text-white py-3 px-6 rounded-xl font-bold text-[13px] tracking-wider hover:brightness-110 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
       >
         {isSubmitting ? 'Mengirim...' : 'Kirim Pesan'}
       </button>
