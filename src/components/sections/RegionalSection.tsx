@@ -28,25 +28,39 @@ export function RegionalSection() {
     <section
       id="regional"
       className="relative w-full"
-      style={{
-        background: 'linear-gradient(to bottom, #2F7FB4 0%, #365380 100%)',
-      }}
     >
-      <div className="absolute inset-0 grid-bg opacity-[0.06]" />
+      {/* Solid overlay — covers hero image underneath, regional looks distinct */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(to bottom, #2F7FB4 0%, #365380 100%)',
+          zIndex: 0,
+        }}
+      />
+      <div className="absolute inset-0 grid-bg opacity-[0.06]" style={{ zIndex: 1 }} />
 
-      {/* Pulau — fills section, image pushed to top-right via object-position */}
-      <div className="absolute inset-0 z-[2] hidden lg:block">
+      {/* Pulau — absolute wrapper, posisi & ukuran jelas */}
+      <div
+        className="hidden lg:block"
+        style={{
+          position: 'absolute',
+          right: '10px',    /* geser kiri = naikin angka, geser kanan = turunin/negatif */
+          top: '0px',     /* geser atas = negatif, geser bawah = positif */
+          width: '520px',
+          height: '580px',
+          zIndex: 2,
+        }}
+      >
         <Image
           src="/images/Pulau-Right-Home.png"
           alt="Peta Pulau"
           fill
-          className="object-none"
-          style={{ objectPosition: 'right -30px top -20px' }}
+          className="object-contain object-center"
         />
       </div>
 
       <div className="absolute bottom-0 right-16 xl:right-20 z-[5] pointer-events-none select-none hidden lg:block">
-        <div className="relative w-[300px] xl:w-[380px]">
+        <div className="relative w-[300px] xl:w-[350px]">
           <Image
             src="/images/Aria-Home-01.png"
             alt="Aria Ayumi"

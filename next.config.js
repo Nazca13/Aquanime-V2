@@ -1,12 +1,13 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+
+module.exports = {
   images: {
-    domains: ['localhost'],
-    formats: ['image/webp', 'image/avif'],
-  },
-  experimental: {
-    optimizePackageImports: ['@emailjs/browser'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.myanimelist.net', // Ganti dengan domain gambar yang kamu pakai
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
 }
-
-module.exports = nextConfig

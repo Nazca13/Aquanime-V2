@@ -96,7 +96,6 @@
   }
 }
 
-/* ── Utility Layer ── */
 @layer utilities {
   .grid-bg {
     background-image:

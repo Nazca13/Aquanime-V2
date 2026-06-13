@@ -10,8 +10,27 @@ import { FuelSection } from '@/components/sections/FuelSection'
 export function HomePage() {
   return (
     <>
-      {/* Flex column + same bg = ZERO gap possible */}
-      <div className="flex flex-col" style={{ backgroundColor: '#2F7FB4' }}>
+      {/*
+        Shared background wrapper: hero image spans BOTH hero + regional.
+        No boundary between them — same image continues underneath.
+      */}
+      <div
+        style={{
+          position: 'relative',
+          backgroundImage: "url('/images/AquaNime-Bg.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        {/* Shared dark overlay across both sections */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            backgroundColor: 'rgba(0,0,0,0.45)',
+            zIndex: 0,
+          }}
+        />
         <HeroSection />
         <RegionalSection />
       </div>

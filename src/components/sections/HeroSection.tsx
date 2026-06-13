@@ -3,46 +3,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-/*
-  GAP FIX (FINAL):
-  - Section bg-color = #2F7FB4 (= regional gradient start)
-  - Gambar + overlay hitam dibungkus 1 div
-  - Div tsb punya mask-image: fade out di bawah
-  - Di bottom hero: gambar+overlay hilang → #2F7FB4 solid keliatan
-  - Regional mulai #2F7FB4 → WARNA IDENTIK → GAP MUSTAHIL
-*/
-
 export function HeroSection() {
   return (
     <section
       id="hero"
       className="relative w-full min-h-screen flex items-center"
-      style={{ backgroundColor: '#2F7FB4' }}
     >
-      {/*
-        Wrapper gambar + overlay.
-        mask-image membuat keduanya fade out di bawah,
-        sehingga hero bg-color #2F7FB4 keliatan di bottom.
-      */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)',
-          maskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)',
-        }}
-      >
-        {/* BG Image */}
-        <Image
-          src="/images/AquaNime-Bg.png"
-          alt="Hero Background"
-          fill
-          className="object-cover object-center"
-          priority
-          quality={90}
-        />
-        {/* Overlay hitam */}
-        <div className="absolute inset-0 bg-black/45" />
-      </div>
+      {/* BG image + overlay is in PARENT wrapper (HomePage), not here */}
 
       {/* Logo watermark kanan atas */}
       <div className="absolute top-[90px] sm:top-[100px] right-8 sm:right-12 lg:right-16 xl:right-20 z-10">
