@@ -71,6 +71,7 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   body {
@@ -78,6 +79,22 @@
     overflow-x: hidden;
     background-color: #F4F7F9;
     color: #0F172A;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Prevent layout shifts from images */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* GPU acceleration for animated elements */
+  .animate-fadeIn,
+  [class*="transition-"] {
+    will-change: auto;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
   /* Scrollbar */

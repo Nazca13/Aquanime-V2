@@ -270,13 +270,26 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
 }
 
 body {
   color: #0f172a;
+  -webkit-overflow-scrolling: touch;
   background-color: #f4f7f9;
   font-family: Poppins, sans-serif;
   overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.animate-fadeIn, [class*="transition-"] {
+  will-change: auto;
+  backface-visibility: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -376,8 +389,12 @@ body {
   top: 50%;
 }
 
-.top-\[90px\] {
-  top: 90px;
+.top-\[70px\] {
+  top: 70px;
+}
+
+.top-\[120px\] {
+  top: 120px;
 }
 
 .z-0 {
@@ -1944,8 +1961,12 @@ body {
     right: 3rem;
   }
 
-  .sm\:top-\[100px\] {
-    top: 100px;
+  .sm\:top-\[80px\] {
+    top: 80px;
+  }
+
+  .sm\:top-\[130px\] {
+    top: 130px;
   }
 
   .sm\:mt-14 {

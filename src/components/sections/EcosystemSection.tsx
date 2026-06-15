@@ -49,7 +49,7 @@ export function EcosystemSection() {
                 key={s.id}
                 className="relative rounded-2xl overflow-hidden h-[240px] group cursor-pointer"
               >
-                <Image src={s.img} alt={s.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                <Image src={s.img} alt={s.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <p className="absolute bottom-5 left-5 right-5 text-white font-bold text-[14px] leading-[1.4]">{s.title}</p>
               </div>
@@ -65,7 +65,7 @@ export function EcosystemSection() {
                   i === cur ? 'opacity-100 translate-x-0' : i < cur ? 'opacity-0 -translate-x-full' : 'opacity-0 translate-x-full'
                 }`}
               >
-                <Image src={s.img} alt={s.title} fill className="object-cover" />
+                <Image src={s.img} alt={s.title} fill sizes="100vw" className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <p className="absolute bottom-5 left-5 right-5 text-white font-bold text-[13px] sm:text-[15px]">{s.title}</p>
               </div>

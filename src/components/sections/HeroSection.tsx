@@ -12,7 +12,7 @@ export function HeroSection() {
       {/* BG image + overlay is in PARENT wrapper (HomePage), not here */}
 
       {/* Logo watermark kanan atas */}
-      <div className="absolute top-[90px] sm:top-[100px] right-8 sm:right-12 lg:right-16 xl:right-20 z-10">
+      <div className="absolute top-[120px] sm:top-[130px] right-8 sm:right-12 lg:right-16 xl:right-20 z-10">
         <Image
           src="/images/AquaNime-Logo.png"
           alt=""

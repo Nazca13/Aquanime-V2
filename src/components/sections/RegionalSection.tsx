@@ -55,6 +55,7 @@ export function RegionalSection() {
           src="/images/Pulau-Right-Home.png"
           alt="Peta Pulau"
           fill
+          sizes="520px"
           className="object-contain object-center"
         />
       </div>

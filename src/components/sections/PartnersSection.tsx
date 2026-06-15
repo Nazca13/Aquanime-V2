@@ -23,7 +23,7 @@ export function PartnersSection() {
 
       {/* Effect-Home-03 kiri */}
       <div className="absolute top-1/2 -translate-y-1/2 left-0 w-[200px] sm:w-[280px] aspect-square z-0 pointer-events-none">
-        <Image src="/images/Effect-Home-03.png" alt="" fill className="object-contain object-left opacity-45" />
+        <Image src="/images/Effect-Home-03.png" alt="" fill sizes="(max-width: 768px) 200px, 280px" className="object-contain object-left opacity-45" />
       </div>
 
       <div className="relative z-10 max-w-[1320px] mx-auto px-5 lg:px-8">
@@ -47,7 +47,7 @@ export function PartnersSection() {
           <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-14">
             {DILIPUT.map((p) => (
               <div key={p.name} className="group relative w-[90px] sm:w-[110px] h-[36px] sm:h-[44px]">
-                <Image src={p.logo} alt={p.name} fill className="object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" />
+                <Image src={p.logo} alt={p.name} fill sizes="(max-width: 768px) 90px, 110px" className="object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" />
               </div>
             ))}
           </div>
@@ -59,7 +59,7 @@ export function PartnersSection() {
           <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-14">
             {KOLABORATOR.map((p) => (
               <div key={p.name} className="group relative w-[75px] sm:w-[95px] h-[32px] sm:h-[40px]">
-                <Image src={p.logo} alt={p.name} fill className="object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" />
+                <Image src={p.logo} alt={p.name} fill sizes="(max-width: 768px) 75px, 95px" className="object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" />
               </div>
             ))}
           </div>

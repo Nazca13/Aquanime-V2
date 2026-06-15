@@ -45,6 +45,7 @@ export function MeetAriaSection() {
                 src="/images/Aria-Home-02.png"
                 alt="Aria Ayumi"
                 fill
+                sizes="(max-width: 768px) 260px, (max-width: 1024px) 300px, 360px"
                 className="object-contain object-bottom"
               />
             </div>

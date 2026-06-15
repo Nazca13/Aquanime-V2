@@ -21,8 +21,11 @@ export function Header() {
   const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
+    // Check initial scroll position on mount
+    setScrolled(window.scrollY > 40)
+    
     const onScroll = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', onScroll)
+    window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
@@ -77,9 +80,9 @@ export function Header() {
               className="hidden sm:flex items-center gap-1.5 bg-white/10 border border-white/15 rounded-full pl-[5px] pr-2.5 py-[3px] text-white hover:bg-white/15 transition-all duration-200"
             >
               <span className="w-[20px] h-[20px] rounded-full bg-white/15 flex items-center justify-center">
-                <i className={`fas ${theme === 'dark' ? 'fa-sun text-amber-300' : 'fa-moon text-white/80'} text-[8px]`} />
+                <i className={`fas ${theme === 'dark' ? 'fa-sun text-amber-300' : 'fa-moon text-white/80'} text-[8px]`} suppressHydrationWarning />
               </span>
-              <span className="text-[10px] font-semibold tracking-wider text-white/80">
+              <span className="text-[10px] font-semibold tracking-wider text-white/80" suppressHydrationWarning>
                 {theme === 'dark' ? 'LIGHT' : 'DARK'}
               </span>
             </button>

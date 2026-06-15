@@ -19,7 +19,7 @@ function HeroSection() {
         className: "relative w-full min-h-screen flex items-center",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute top-[90px] sm:top-[100px] right-8 sm:right-12 lg:right-16 xl:right-20 z-10",
+                className: "absolute top-[120px] sm:top-[130px] right-8 sm:right-12 lg:right-16 xl:right-20 z-10",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                     src: "/images/AquaNime-Logo.png",
                     alt: "",
@@ -197,6 +197,7 @@ function RegionalSection() {
                     src: "/images/Pulau-Right-Home.png",
                     alt: "Peta Pulau",
                     fill: true,
+                    sizes: "520px",
                     className: "object-contain object-center"
                 }, void 0, false, {
                     fileName: "[project]/src/components/sections/RegionalSection.tsx",
@@ -220,17 +221,17 @@ function RegionalSection() {
                         className: "w-full h-auto object-contain drop-shadow-lg"
                     }, void 0, false, {
                         fileName: "[project]/src/components/sections/RegionalSection.tsx",
-                        lineNumber: 64,
+                        lineNumber: 65,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/sections/RegionalSection.tsx",
-                    lineNumber: 63,
+                    lineNumber: 64,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/RegionalSection.tsx",
-                lineNumber: 62,
+                lineNumber: 63,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -244,14 +245,14 @@ function RegionalSection() {
                                 "MENGHUBUNGKAN",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                     fileName: "[project]/src/components/sections/RegionalSection.tsx",
-                                    lineNumber: 79,
+                                    lineNumber: 80,
                                     columnNumber: 13
                                 }, this),
                                 "KREATIVITAS LINTAS NEGARA"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/sections/RegionalSection.tsx",
-                            lineNumber: 77,
+                            lineNumber: 78,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -259,7 +260,7 @@ function RegionalSection() {
                             children: "Lebih dari sekedar kumpul bareng. Kami adalah ekosistem tempat para kreator Jejepangan berkolaborasi dari ilustrasi, musik, hingga literasi — mengubah imajinasi liar menjadi karya nyata yang diakui."
                         }, void 0, false, {
                             fileName: "[project]/src/components/sections/RegionalSection.tsx",
-                            lineNumber: 83,
+                            lineNumber: 84,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -270,12 +271,12 @@ function RegionalSection() {
                                     children: r.label
                                 }, r.id, false, {
                                     fileName: "[project]/src/components/sections/RegionalSection.tsx",
-                                    lineNumber: 92,
+                                    lineNumber: 93,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/components/sections/RegionalSection.tsx",
-                            lineNumber: 90,
+                            lineNumber: 91,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -283,18 +284,18 @@ function RegionalSection() {
                             children: current.desc
                         }, current.id, false, {
                             fileName: "[project]/src/components/sections/RegionalSection.tsx",
-                            lineNumber: 106,
+                            lineNumber: 107,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/sections/RegionalSection.tsx",
-                    lineNumber: 76,
+                    lineNumber: 77,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/RegionalSection.tsx",
-                lineNumber: 75,
+                lineNumber: 76,
                 columnNumber: 7
             }, this)
         ]
@@ -396,6 +397,7 @@ function ExpressionSection() {
                                         src: d.img,
                                         alt: d.title,
                                         fill: true,
+                                        sizes: "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw",
                                         className: "object-cover group-hover:scale-105 transition-transform duration-500"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/sections/ExpressionSection.tsx",
@@ -410,7 +412,7 @@ function ExpressionSection() {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/sections/ExpressionSection.tsx",
-                                        lineNumber: 51,
+                                        lineNumber: 52,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -432,17 +434,17 @@ function ExpressionSection() {
                                                 className: "w-[28px] h-[28px] brightness-0 invert"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/sections/ExpressionSection.tsx",
-                                                lineNumber: 68,
+                                                lineNumber: 69,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/sections/ExpressionSection.tsx",
-                                            lineNumber: 64,
+                                            lineNumber: 65,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/sections/ExpressionSection.tsx",
-                                        lineNumber: 60,
+                                        lineNumber: 61,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -452,12 +454,12 @@ function ExpressionSection() {
                                             children: d.title
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/sections/ExpressionSection.tsx",
-                                            lineNumber: 74,
+                                            lineNumber: 75,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/sections/ExpressionSection.tsx",
-                                        lineNumber: 73,
+                                        lineNumber: 74,
                                         columnNumber: 17
                                     }, this)
                                 ]
@@ -630,6 +632,7 @@ function EcosystemSection() {
                                             src: s.img,
                                             alt: s.title,
                                             fill: true,
+                                            sizes: "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw",
                                             className: "object-cover group-hover:scale-105 transition-transform duration-500"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/sections/EcosystemSection.tsx",
@@ -672,6 +675,7 @@ function EcosystemSection() {
                                                 src: s.img,
                                                 alt: s.title,
                                                 fill: true,
+                                                sizes: "100vw",
                                                 className: "object-cover"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/sections/EcosystemSection.tsx",
@@ -1260,6 +1264,7 @@ function MeetAriaSection() {
                                 src: "/images/Aria-Home-02.png",
                                 alt: "Aria Ayumi",
                                 fill: true,
+                                sizes: "(max-width: 768px) 260px, (max-width: 1024px) 300px, 360px",
                                 className: "object-contain object-bottom"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/sections/MeetAriaSection.tsx",
@@ -1362,6 +1367,7 @@ function PartnersSection() {
                     src: "/images/Effect-Home-03.png",
                     alt: "",
                     fill: true,
+                    sizes: "(max-width: 768px) 200px, 280px",
                     className: "object-contain object-left opacity-45"
                 }, void 0, false, {
                     fileName: "[project]/src/components/sections/PartnersSection.tsx",
@@ -1438,6 +1444,7 @@ function PartnersSection() {
                                             src: p.logo,
                                             alt: p.name,
                                             fill: true,
+                                            sizes: "(max-width: 768px) 90px, 110px",
                                             className: "object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/sections/PartnersSection.tsx",
@@ -1479,6 +1486,7 @@ function PartnersSection() {
                                             src: p.logo,
                                             alt: p.name,
                                             fill: true,
+                                            sizes: "(max-width: 768px) 75px, 95px",
                                             className: "object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/sections/PartnersSection.tsx",

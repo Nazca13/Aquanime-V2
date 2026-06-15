@@ -65,8 +65,8 @@ export function MobileMenu({ isOpen, onClose, navigation }: MobileMenuProps) {
               onClick={toggleTheme}
               className="mt-5 w-full flex items-center gap-2 bg-white/8 border border-white/10 rounded-xl px-4 py-3 text-white text-sm font-medium hover:bg-white/15 transition-all"
             >
-              <i className={`fas ${theme === 'dark' ? 'fa-sun text-accent-secondary' : 'fa-moon text-primary-light'}`} />
-              <span>{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
+              <i className={`fas ${theme === 'dark' ? 'fa-sun text-accent-secondary' : 'fa-moon text-primary-light'}`} suppressHydrationWarning />
+              <span suppressHydrationWarning>{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
             </button>
           </nav>
 
