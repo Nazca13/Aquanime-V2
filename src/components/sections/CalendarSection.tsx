@@ -47,15 +47,15 @@ export function CalendarSection() {
   const nextMonth = () => { if (month === 12) { setMonth(1); setYear((y) => y + 1) } else setMonth((m) => m + 1) }
 
   return (
-    <section id="calendar" className="relative w-full bg-surface-bg py-16 sm:py-20 lg:py-24 overflow-hidden">
+    <section id="calendar" className="relative w-full bg-surface-bg py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 opacity-[0.015]" style={{ backgroundImage: 'linear-gradient(to right, #0F3E61 1px, transparent 1px), linear-gradient(to bottom, #0F3E61 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
-      <div className="relative z-10 max-w-[1320px] mx-auto px-5 lg:px-8">
+      <div className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-5 lg:px-8">
 
         {/* Heading */}
-        <div className="text-center max-w-[600px] mx-auto mb-12">
-          <h2 className="text-primary-base font-extrabold text-[26px] sm:text-[32px] md:text-[38px] tracking-tight leading-[1.15]">
+        <div className="text-center max-w-[600px] mx-auto mb-8 sm:mb-10 md:mb-12">
+          <h2 className="text-primary-base font-extrabold text-[22px] sm:text-[28px] md:text-[32px] lg:text-[38px] tracking-tight leading-[1.15]">
             KALENDER EVENT
             <br />
             POP-KULTUR DI INDONESIA
@@ -63,53 +63,53 @@ export function CalendarSection() {
         </div>
 
         {/* Content: List + Calendar */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
 
           {/* Left — Events list */}
-          <div className="space-y-2.5">
+          <div className="space-y-2 sm:space-y-2.5">
             {EVENTS.map((e) => (
               <div
                 key={e.id}
                 onMouseEnter={() => setHovered(e.id)}
                 onMouseLeave={() => setHovered(null)}
-                className={`flex items-center gap-4 p-4 rounded-xl border cursor-pointer transition-all duration-300 ${
+                className={`flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl border cursor-pointer transition-all duration-300 ${
                   hovered === e.id
                     ? 'bg-primary-base text-white border-primary-light shadow-lg shadow-primary-light/15'
                     : 'bg-white text-text-primary border-surface-border hover:border-primary-light/30'
                 }`}
               >
-                <span className={`${e.color} text-white text-[11px] font-bold px-3 py-1.5 rounded-lg min-w-[48px] text-center`}>
+                <span className={`${e.color} text-white text-[10px] sm:text-[11px] font-bold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg min-w-[44px] sm:min-w-[48px] text-center`}>
                   {e.dates}
                 </span>
-                <span className="font-semibold text-[13px] tracking-wide">{e.name}</span>
+                <span className="font-semibold text-[12px] sm:text-[13px] tracking-wide">{e.name}</span>
               </div>
             ))}
           </div>
 
           {/* Right — Calendar grid */}
-          <div className="bg-primary-base rounded-2xl p-5 sm:p-6 shadow-xl">
+          <div className="bg-primary-base rounded-2xl p-4 sm:p-5 md:p-6 shadow-xl">
             {/* Month nav */}
-            <div className="flex items-center justify-between mb-5">
-              <button onClick={prevMonth} className="w-8 h-8 rounded-lg bg-white/8 text-white flex items-center justify-center hover:bg-white/15 transition-colors">
-                <i className="fas fa-chevron-left text-[11px]" />
+            <div className="flex items-center justify-between mb-4 sm:mb-5">
+              <button onClick={prevMonth} className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-white/8 text-white flex items-center justify-center hover:bg-white/15 transition-colors">
+                <i className="fas fa-chevron-left text-[10px] sm:text-[11px]" />
               </button>
-              <h3 className="text-white font-bold text-[13px] sm:text-[14px] tracking-wider">
+              <h3 className="text-white font-bold text-[12px] sm:text-[13px] md:text-[14px] tracking-wider">
                 {MONTHS[month - 1]} {year}
               </h3>
-              <button onClick={nextMonth} className="w-8 h-8 rounded-lg bg-white/8 text-white flex items-center justify-center hover:bg-white/15 transition-colors">
-                <i className="fas fa-chevron-right text-[11px]" />
+              <button onClick={nextMonth} className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-white/8 text-white flex items-center justify-center hover:bg-white/15 transition-colors">
+                <i className="fas fa-chevron-right text-[10px] sm:text-[11px]" />
               </button>
             </div>
 
             {/* Day labels */}
-            <div className="grid grid-cols-7 gap-1 mb-1.5">
+            <div className="grid grid-cols-7 gap-0.5 sm:gap-1 mb-1 sm:mb-1.5">
               {DAYS.map((d) => (
-                <div key={d} className="text-center text-white/35 text-[10px] font-medium py-1">{d}</div>
+                <div key={d} className="text-center text-white/35 text-[9px] sm:text-[10px] font-medium py-1">{d}</div>
               ))}
             </div>
 
             {/* Day cells */}
-            <div className="grid grid-cols-7 gap-1">
+            <div className="grid grid-cols-7 gap-0.5 sm:gap-1">
               {Array.from({ length: firstDay }).map((_, i) => <div key={`e-${i}`} className="aspect-square" />)}
               {Array.from({ length: daysInMonth }).map((_, i) => {
                 const day = i + 1
@@ -118,7 +118,7 @@ export function CalendarSection() {
                 return (
                   <div
                     key={day}
-                    className={`aspect-square flex items-center justify-center rounded-lg text-[12px] font-medium transition-all duration-300 ${
+                    className={`aspect-square flex items-center justify-center rounded-lg text-[10px] sm:text-[11px] md:text-[12px] font-medium transition-all duration-300 ${
                       isHov ? 'bg-primary-light text-white shadow-md shadow-primary-light/35 scale-110'
                       : isEvt ? 'bg-primary-light/20 text-primary-light'
                       : 'text-white/45 hover:bg-white/5'

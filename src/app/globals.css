@@ -57,7 +57,7 @@
   font-display: swap;
 }
 
-/* ── Base Layer ── */
+/* ─ Base Layer ── */
 @layer base {
   *,
   *::before,
@@ -72,6 +72,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    width: 100%;
   }
 
   body {
@@ -80,6 +82,8 @@
     background-color: #F4F7F9;
     color: #0F172A;
     -webkit-overflow-scrolling: touch;
+    width: 100%;
+    min-height: 100vh;
   }
 
   /* Prevent layout shifts from images */
@@ -89,12 +93,26 @@
     display: block;
   }
 
-  /* GPU acceleration for animated elements */
+  /* Prevent horizontal overflow from any element */
+  section,
+  main,
+  div {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* GPU acceleration for animated elements - prevent flickering */
   .animate-fadeIn,
   [class*="transition-"] {
     will-change: auto;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  /* Fix for absolute positioned elements on smaller screens */
+  [class*="absolute"] {
+    max-width: 100%;
   }
 
   /* Scrollbar */

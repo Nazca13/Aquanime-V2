@@ -11,34 +11,32 @@ const DIVISIONS = [
 
 export function ExpressionSection() {
   return (
-    <section id="expression" className="relative w-full bg-surface-bg py-16 sm:py-20 lg:py-24">
-      <div className="max-w-[1320px] mx-auto px-5 lg:px-8">
+    <section id="expression" className="relative w-full bg-surface-bg py-12 sm:py-16 md:py-20 lg:py-24">
+      <div className="max-w-[1320px] mx-auto px-4 sm:px-5 lg:px-8">
 
         {/* Heading */}
         <div className="text-center max-w-[600px] mx-auto">
-          <h2 className="text-primary-base font-extrabold text-[26px] sm:text-[32px] md:text-[38px] tracking-tight">
+          <h2 className="text-primary-base font-extrabold text-[22px] sm:text-[28px] md:text-[32px] lg:text-[38px] tracking-tight">
             RUANG EKSPRESI TANPA BATAS
           </h2>
-          <p className="mt-4 text-text-secondary text-[13px] sm:text-[14px] leading-[1.7]">
+          <p className="mt-3 sm:mt-4 text-text-secondary text-[12px] sm:text-[13px] md:text-[14px] leading-[1.7]">
             Lebih dari sekedar hobi. Temukan departemen yang paling sesuai dengan
             passion kamu — dari panggung musik, seni visual, hingga publikasi
             literasi independen.
           </p>
         </div>
 
-        {/* 4 Cards */}
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {/* 4 Cards - responsive grid */}
+        <div className="mt-8 sm:mt-10 md:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {DIVISIONS.map((d) => (
             <div
               key={d.id}
               className="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
             >
               {/*
-                Single continuous background: image fills entire card.
-                Blue overlay at bottom half creates the blue area.
-                No separate divs = no gap possible.
+                Responsive card height: fluid with min/max
               */}
-              <div className="relative" style={{ height: '420px' }}>
+              <div className="relative" style={{ height: 'clamp(320px, 40vw, 420px)' }}>
                 {/* Image fills the ENTIRE card */}
                 <Image
                   src={d.img}
@@ -57,22 +55,22 @@ export function ExpressionSection() {
                   }}
                 />
 
-                {/* Icon — positioned at the boundary where blue starts */}
+                {/* Icon — responsive positioning */}
                 <div
                   className="absolute left-1/2 -translate-x-1/2"
-                  style={{ bottom: '100px' }}
+                  style={{ bottom: 'clamp(70px, 12vw, 100px)' }}
                 >
                   <div
-                    className="w-[72px] h-[72px] rounded-full flex items-center justify-center shadow-lg"
+                    className="w-[56px] h-[56px] sm:w-[64px] sm:h-[64px] md:w-[72px] md:h-[72px] rounded-full flex items-center justify-center shadow-lg"
                     style={{ backgroundColor: '#3B8BC4', border: '3px solid rgba(255,255,255,0.25)' }}
                   >
-                    <Image src={d.icon} alt="" width={30} height={30} className="w-[28px] h-[28px] brightness-0 invert" />
+                    <Image src={d.icon} alt="" width={30} height={30} className="w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] md:w-[28px] md:h-[28px] brightness-0 invert" />
                   </div>
                 </div>
 
                 {/* Text — at the very bottom */}
-                <div className="absolute bottom-0 left-0 right-0 pb-5 px-3 text-center">
-                  <h3 className="text-white font-bold text-[10px] sm:text-[11px] tracking-[0.12em]">
+                <div className="absolute bottom-0 left-0 right-0 pb-4 sm:pb-5 px-3 text-center">
+                  <h3 className="text-white font-bold text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.12em]">
                     {d.title}
                   </h3>
                 </div>

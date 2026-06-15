@@ -42,8 +42,8 @@ export function Header() {
           background: 'linear-gradient(90deg, #36527F 0%, #5488DB 100%)',
         }}
       >
-        {/* Inner content — generous padding kanan kiri */}
-        <div className="flex items-center justify-between h-[52px] sm:h-[56px] px-8 sm:px-12 lg:px-16 xl:px-20">
+        {/* Inner content — responsive padding */}
+        <div className="flex items-center justify-between h-[48px] sm:h-[52px] md:h-[56px] px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
 
           {/* ── Logo (kiri) ── */}
           <Link href="/" className="shrink-0">
